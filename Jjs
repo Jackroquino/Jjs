@@ -1,4 +1,3 @@
---made by pen and kj
 local player = game.Players.LocalPlayer
  
 local playerGui = player.PlayerGui
@@ -202,6 +201,53 @@ final6.Parent = game.Players.LocalPlayer.Character["Torso"]
  
 end
  
+ local final1 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
+final1.Parent = game.Players.LocalPlayer.Character["Right Arm"]
+for _, child in ipairs(final1:GetChildren()) do
+    if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+        child:Emit(1) -- Emit 20 particles
+    end
+end
+local final2 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Origin:Clone()
+final2.Parent = game.Players.LocalPlayer.Character["Right Arm"]
+    for _, child in ipairs(final2:GetChildren()) do
+        if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+            child:Emit(1) -- Emit 20 particles
+        end
+    end
+local final3 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
+final3.Parent = game.Players.LocalPlayer.Character["Right Arm"]
+    for _, child in ipairs(final3:GetChildren()) do
+        if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+            child:Emit(1) -- Emit 20 particles
+        end
+    end
+local final4 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
+final4.Parent = game.Players.LocalPlayer.Character["Torso"]
+    for _, child in ipairs(final4:GetChildren()) do
+        if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+            child:Emit(10) -- Emit 20 particles
+        end
+    end
+local final5 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
+final5.Parent = game.Players.LocalPlayer.Character["Torso"]
+    for _, child in ipairs(final5:GetChildren()) do
+        if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+            child:Emit("10") -- Emit 20 particles
+        end
+    end
+local final6 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
+final6.Parent = game.Players.LocalPlayer.Character["Torso"]
+    for _, child in ipairs(final6:GetChildren()) do
+        if child:IsA("ParticleEmitter") then -- Check if the child is a ParticleEmitter
+            child:Emit("10") -- Emit 20 particles
+        end
+    end
+
+    end
+ 
+end
+
  
 humanoid.AnimationPlayed:Connect(onAnimationPlayed)
  
@@ -445,7 +491,7 @@ end
  
 local AnimAnim = Instance.new("Animation")
  
-AnimAnim.AnimationId = "rbxassetid://12534735382"
+AnimAnim.AnimationId = "rbxassetid://15090141089"
  
 local Anim = Humanoid:LoadAnimation(AnimAnim)
  
@@ -510,7 +556,7 @@ Anim:AdjustSpeed(0)
  
 Anim.TimePosition = startTime
  
-Anim:AdjustSpeed(0.1)
+Anim:AdjustSpeed(0.5)
  
  
     end
@@ -761,14 +807,12 @@ end
  
 local AnimAnim = Instance.new("Animation")
  
-AnimAnim.AnimationId = "rbxassetid://13073745835"
+AnimAnim.AnimationId = "rbxassetid://15290930205"
  
 local Anim = Humanoid:LoadAnimation(AnimAnim)
  
  
 local startTime = 0
- 
-wait(3)
  
 Anim:Play()
  
@@ -776,7 +820,7 @@ Anim:AdjustSpeed(0)
  
 Anim.TimePosition = startTime
  
-Anim:AdjustSpeed(0.1)
+Anim:AdjustSpeed(0.5)
  
  
     end
@@ -787,7 +831,6 @@ humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 
 
 local animationId = 10470104242 ------- DownSlam
- 
  
 local player = game.Players.LocalPlayer
  
@@ -939,88 +982,7 @@ end
  
 local function stopSpecificAnimations()
  
-    for _, track in ipairs(humanoid:GetPlayingAnimationTracks()) do
- 
-        local animationId = tonumber(track.Animation.AnimationId:match("%d+"))
- 
-        if animationIdsToStop[animationId] then
- 
-            track:Stop()
- 
-        end
- 
-    end
- 
-end
- 
- 
-local function onAnimationPlayed(animationTrack)
- 
-    local animationId = tonumber(animationTrack.Animation.AnimationId:match("%d+"))
- 
-    if animationIdsToStop[animationId] then
- 
-        stopSpecificAnimations()
- 
-        animationTrack:Stop()
- 
-       
- 
-        local replacementAnimationId = replacementAnimations[tostring(animationId)]
- 
-        if replacementAnimationId then
- 
-            playReplacementAnimation(animationId)
- 
-        end
- 
-    end
- 
-end
- 
- 
-humanoid.AnimationPlayed:Connect(onAnimationPlayed)
- 
- 
-local player = game.Players.LocalPlayer
- 
-local character = player.Character or player.CharacterAdded:Wait()
- 
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
- 
- 
-local function onBodyVelocityAdded(bodyVelocity)
- 
-    if bodyVelocity:IsA("BodyVelocity") then
- 
-        bodyVelocity.Velocity = Vector3.new(bodyVelocity.Velocity.X, 0, bodyVelocity.Velocity.Z)
- 
-    end
- 
-end
- 
- 
-character.DescendantAdded:Connect(onBodyVelocityAdded)
- 
- 
-for _, descendant in pairs(character:GetDescendants()) do
- 
-    onBodyVelocityAdded(descendant)
- 
-end
- 
- 
-player.CharacterAdded:Connect(function(newCharacter)
- 
-    character = newCharacter
- 
-    humanoidRootPart = character:WaitForChild("HumanoidRootPart")
- 
-    character.DescendantAdded:Connect(onBodyVelocityAdded)
- 
-   
- 
-    for _, descendant in pairs(character:GetDescendants()) do
+    for _, track in ipairs(humanoid:GetPlayingAnimationTs()) do
  
         onBodyVelocityAdded(descendant)
  
