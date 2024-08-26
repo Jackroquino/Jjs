@@ -509,7 +509,7 @@ Anim:AdjustSpeed(0)
  
 Anim.TimePosition = startTime
  
-Anim:AdjustSpeed(0.1)
+Anim:AdjustSpeed(0.3)
  
  
     end
@@ -767,15 +767,13 @@ local Anim = Humanoid:LoadAnimation(AnimAnim)
  
 local startTime = 0
  
-wait(3)
- 
 Anim:Play()
  
 Anim:AdjustSpeed(0)
  
 Anim.TimePosition = startTime
  
-Anim:AdjustSpeed(0.1)
+Anim:AdjustSpeed(0.5)
  
  
     end
