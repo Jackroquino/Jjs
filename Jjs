@@ -509,7 +509,7 @@ Anim:AdjustSpeed(0)
  
 Anim.TimePosition = startTime
  
-Anim:AdjustSpeed(1.2)
+Anim:AdjustSpeed(0.3)
  
  
     end
@@ -656,7 +656,7 @@ end
  
 local AnimAnim = Instance.new("Animation")
  
-AnimAnim.AnimationId = "rbxassetid://18179181663"
+AnimAnim.AnimationId = "rbxassetid://18450698238"
  
 local Anim = Humanoid:LoadAnimation(AnimAnim)
  
