@@ -151,8 +151,12 @@ Anim:AdjustSpeed(0.1)
 Anim.TimePosition = startTime
  
 Anim:AdjustSpeed(0.9)
- 
-wait(0.9)
+
+audio.SoundId = "rbxassetid://"..id
+        audio:Play()
+audio.SoundId = "rbxassetid://17825706068"
+
+wait(0.8)
 
  local final1 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
 final1.Parent = game.Players.LocalPlayer.Character["Right Arm"]
