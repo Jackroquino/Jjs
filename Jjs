@@ -152,9 +152,10 @@ Anim.TimePosition = startTime
  
 Anim:AdjustSpeed(0.9)
 
-audio.SoundId = "rbxassetid://"..id
-        audio:Play()
-audio.SoundId = "rbxassetid://17825706068"
+local soundeffect = Instance.new("Sound")
+soundeffect.SoundId = "17825706068"
+soundeffect:Play()
+soundeffect.Volume = 5
 
 wait(0.8)
 
