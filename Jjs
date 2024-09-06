@@ -151,12 +151,8 @@ Anim:AdjustSpeed(0.1)
 Anim.TimePosition = startTime
  
 Anim:AdjustSpeed(0.9)
-
-local sound = Instance.new("Sound")
-sound.SoundId = "rbxassetid://17825706068"
-sound:Play()
-
-wait(0.8)
+ 
+wait(0.9)
 
  local final1 = game.ReplicatedStorage.Resources.KJEffects["KJWallCombo"].FinalImpact.Attachment:Clone()
 final1.Parent = game.Players.LocalPlayer.Character["Right Arm"]
@@ -602,7 +598,7 @@ end
  
 local AnimAnim = Instance.new("Animation")
  
-AnimAnim.AnimationId = "rbxassetid://12832505612"
+AnimAnim.AnimationId = "rbxassetid://17838006839"
  
 local Anim = Humanoid:LoadAnimation(AnimAnim)
  
@@ -866,7 +862,9 @@ local animationIdsToStop = {
  
  
 local replacementAnimations = {
- 
+  
+   ["17859015788"] = "rbxassetid://12684185971",
+
     ["10469639222"] = "rbxassetid://17889471098",
  
     ["10469630950"] = "rbxassetid://17889461810",
